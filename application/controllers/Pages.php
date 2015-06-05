@@ -94,7 +94,7 @@ class Pages extends CI_Controller {
 			foreach($data['more'] as $data_more) {
 			?>
 			<div class="img-r">
-			    <a href="<?php echo base_url('news/'.$data_more->art_id); ?>">
+			    <a href="<?php echo base_url('news/'.$article->keywords.'/'.$article->parent_id.'/'.$article->art_id); ?>">
 			    	<img src="<?php echo base_url('uploads_thumb/'.$data_more->thumb_img.''); ?>" hspace="11" width="200">
 			    	<center><span><?php echo $data_more->title; ?></span></center>
 			    </a>

@@ -7,16 +7,25 @@
 		,11=>"១១",12=>"១២",13=>"១៣",14=>"១៤",15=>"១៥",16=>"១៦",17=>"១៧",18=>"១៨",19=>"១៩"
 		,20=>"២០",21=>"២១",22=>"២២",23=>"២៣","24"=>"២៤",25=>"២៥",26=>"២៦",27=>"២៧",28=>"២៨",29=>"២៩",30=>"៣០",31=>"៣១");
 	$days=array("Mon"=>"ច័ន្ទ","Tue"=>"អង្គារ","Wed"=>"ពុធ","Thu"=>"ព្រហស្បតិ៍ ","Fri"=>"សុក្រ","Sat"=>"សៅរ៍","Sun"=>"អាទិត្យ");
-	echo '<h1 style="font-size:18px;">'.$detail->title.'</h1>';
 	$date = date_create($detail->insert_date);
 	$year = date_format($date,"Y");
 	$month = date_format($date,"M");
 	$day = date_format($date,"j");
-	$week = date_format($date,"D");
-	$now_year = $y[$year];
-	$now_month = $m[$month];
-	$now_day = $d[$day];
-	//echo $now_week = $days[$week];
+	$now_week = date_format($date,"D");
+	$week=date_format($date,"D");
+	$now_year=$y[$year];
+	$now_month= $m[$month];
+	$now_day=$d[$day];
+	$now_week=$days[$week];
+
+	echo '<h1 style="font-size:18px;">'.$detail->title.'</h1>';
+	echo '<div class="post_date">
+				<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true">
+				
+				</div>
+				<p>ចុះផ្សាយថ្ងៃ '.$now_week.' ទី '.$now_day.' ខែ​ '.$now_month.' ឆ្នាំ '.$now_year.'</p>
+		 </div>';
+
 	echo $detail->description."<br>";
 	
 ?>

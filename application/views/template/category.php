@@ -4,7 +4,7 @@
 		foreach($view as $article) {
 	?>
 	<div class="img-r">
-	    <a href="<?php echo base_url('news/'.$article->art_id); ?>">
+	    <a href="<?php echo base_url('news/'.$article->keywords.'/'.$article->parent_id.'/'.$article->art_id); ?>">
 	    	<img src="<?php echo base_url('uploads_thumb/'.$article->thumb_img.''); ?>" hspace="11" width="200">
 	    	<center><span><?php echo $article->title; ?></span></center>
 	    </a>

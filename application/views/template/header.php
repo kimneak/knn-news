@@ -2,8 +2,18 @@
 <title></title>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta property="fb:admins" content="100001630615904" />
+<meta property="fb:app_id" content="251630558347193" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('public/default/css/style.css'); ?>"/>
 <script type="text/javascript" src="<?php echo base_url('public/default/js/jquery.min.js'); ?>"></script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=251630558347193";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <script>
 <?php
 	if($this->uri->segment(2)){
@@ -100,6 +110,9 @@ $(function(){
 			}
 			else if($this->uri->segment(1) == 'tv') {
 				$url = 'tv';
+			}
+			else if($this->uri->segment(1) == 'news') {
+				$url = 'category';
 			}
 	?>
 	<li style="<?php echo $current; ?>">

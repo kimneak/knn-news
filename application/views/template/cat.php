@@ -2,10 +2,10 @@
     <?php foreach($cat as $data_cat) {
     ?>
     <div class="img-r">
-        <a href="">
+        <a href="<?php echo base_url('news/'.$data_cat->keywords.'/'.$data_cat->parent_id.'/'.$data_cat->art_id); ?>">
             <img src="<?php echo base_url('uploads_thumb/'.$data_cat->thumb_img); ?>" hspace="11" width="200" >
             <center>
-                <span><?php echo $data_cat->title; ?></span>
+                <span><?php //echo $data_cat->title; ?></span>
             </center>
         </a>
     <div class="clear"></div>

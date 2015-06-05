@@ -225,6 +225,16 @@ a:hover{
 .post_date{
 	border-top:1px solid #CCC;
 	border-bottom:1px solid #CCC;
+	padding: 0px;
+}
+.post_date .fb-like{
+	float:left;
+	margin-top: 12px;
+	margin-right: 5px;
+}
+.post_date p{
+	font-size: 12px;
+	color: #7f00a9;
 }
 #footer{
 	border-top:2px solid #FF0000;
@@ -359,6 +369,8 @@ div#tip-topic {
 	width:20px;
 	height:20px;
 }
+
+
 .clear{
 	clear:both;
 	padding:0px;
