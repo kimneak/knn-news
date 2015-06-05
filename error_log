@@ -1,0 +1,4 @@
+[03-Jun-2015 14:58:28 UTC] PHP Fatal error:  Call to undefined function mysqli_init() in /home/admin/public_html/demo/system/database/drivers/mysqli/mysqli_driver.php on line 126
+[03-Jun-2015 14:58:57 UTC] PHP Fatal error:  Call to a member function menu() on a non-object in /home/admin/public_html/demo/application/controllers/Welcome.php on line 12
+[03-Jun-2015 14:59:57 UTC] PHP Fatal error:  Call to a member function menu() on a non-object in /home/admin/public_html/demo/application/controllers/Welcome.php on line 29
+[03-Jun-2015 15:16:39 UTC] PHP Parse error:  syntax error, unexpected '<', expecting ')' in /home/admin/public_html/demo/application/views/template/home.php on line 24
