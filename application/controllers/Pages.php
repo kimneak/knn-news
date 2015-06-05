@@ -80,8 +80,12 @@ class Pages extends CI_Controller {
 												)
 
 						);
-		$data['detail'] = $this->article_model->detail($this->uri->segment(4));
-		$this->load->view('template/detail', $data);
+		$this->load->view('template/detail', array(
+													'detail' => $this->article_model->detail($this->uri->segment(4)),
+													'related_news' => $this->article_model->related_news($this->uri->segment(3), $this->uri->segment(4))
+													)
+
+						);
 		$this->load->view('template/footer');
 	}
 
@@ -89,12 +93,12 @@ class Pages extends CI_Controller {
 	{
 
 		$this->load->model('article_model');
-		if($_POST['type'] == 'category') {
+		if($_POST['type'] == 'category' || $_POST['type'] == 'news') {
 			$data['more'] = $this->article_model->more_model($_POST['id'], intval($_POST['start']), $_POST['type'], $_POST['val']);
 			foreach($data['more'] as $data_more) {
 			?>
 			<div class="img-r">
-			    <a href="<?php echo base_url('news/'.$article->keywords.'/'.$article->parent_id.'/'.$article->art_id); ?>">
+			    <a href="<?php echo base_url('news/'.$data_more->keywords.'/'.$data_more->parent_id.'/'.$data_more->art_id); ?>">
 			    	<img src="<?php echo base_url('uploads_thumb/'.$data_more->thumb_img.''); ?>" hspace="11" width="200">
 			    	<center><span><?php echo $data_more->title; ?></span></center>
 			    </a>

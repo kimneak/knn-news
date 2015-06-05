@@ -30,5 +30,20 @@
 	
 ?>
 </div>
+<div class="title-news"><span>អត្ថបទចាប់អារម្មណ៍ផ្សេងៗទៀត</span></div>
+<?php
+	foreach($related_news as $data) {
+	?>
+	<a href="<?php echo base_url('news/'.$data->keywords.'/'.$data->parent_id.'/'.$data->art_id); ?>">	
+        <div id="related_news">
+        	<img src="<?php echo base_url("uploads_thumb/".$data->thumb_img); ?>" hspace="11" width="86" align="left" height="65">
+          		<span><?php echo $data->title; ?></span>
+        </div>
+    </a>
+<?php	}
+?>
+<div id="test"></div>
+<div class="clear"></div>
+<div id="more">មានច្រើនទៀត...</div>
 </div>
 <div id="w-left"></div>

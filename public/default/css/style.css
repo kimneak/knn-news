@@ -352,12 +352,13 @@ div#tip-topic {
 }
 #more{
     text-align: center;
-    padding: 8px 5px;
+    padding: 7px 20px;
     width: 106px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: auto;
     background: #eee;
+    color: red;
 	margin-top:5px;
 	margin-bottom:10px;
 }

@@ -51,6 +51,16 @@ class article_model extends CI_Model {
 		return $view->result();
 	}
 
+	function detail($id) {
+		$view = $this->conn_db->query("select * from articles_tbl where art_id= ?", array($id));
+		return $view->row();
+	}
+	function related_news($id, $art_id)
+	{
+		$view = $this->conn_db->query('select * from articles_tbl where parent_id = ? and art_id != ?  ORDER BY art_id desc limit 6', array($id, $art_id));
+		return $view->result();
+	}
+
 	function videos($id) {
 		if($this->uri->segment(3) != ""){
 			$view = $this->conn_db->query("select * from galaries_tbl where a_id = ? order by gal_id desc LIMIT 21", array($id));
@@ -58,11 +68,6 @@ class article_model extends CI_Model {
 		else
 			$view = $this->conn_db->query("select * from galaries_tbl where status = 1 and type != 2 and type != 4  order by gal_id desc limit 12");
 		return $view->result();
-	}
-
-	function detail($id) {
-		$view = $this->conn_db->query("select * from articles_tbl where art_id= ?", array($id));
-		return $view->row();
 	}
 
 	function video_tv($id) {
@@ -79,7 +84,7 @@ class article_model extends CI_Model {
 	}
 
 	function more_model($id, $start, $type, $val) {
-		if($type == 'category')
+		if($type == 'category' || $type == 'news')
 			if($val)
 				$view = $this->conn_db->query('select * from articles_tbl where parent_id= ? and status = 1 order by art_id desc LIMIT ?, 12',array($id, $start));
 			else
