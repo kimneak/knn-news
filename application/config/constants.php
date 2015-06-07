@@ -27,10 +27,10 @@ define('DIR_WRITE_MODE', 0755);
 | These modes are used when working with fopen()/popen()
 |
 */
-define('TEMPLATE', 'default'); 
+define('TEMPLATE', 'public/default'); 
 define('URL_PIC', 'public/image/');
-define('BS_JS', 'public/'.TEMPLATE.'/js/');
-define('BS_CSS', 'public/'.TEMPLATE.'/css/');
+define('KNN_JS',  'http://localhost/knn-news/public/default/js/');
+define('KNN_CSS',  'http://localhost/knn-news/public/default/css/');
 define('FOPEN_READ', 'rb');
 define('FOPEN_READ_WRITE', 'r+b');
 define('FOPEN_WRITE_CREATE_DESTRUCTIVE', 'wb'); // truncates existing file data, use with care
